@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance SaaS System</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ================= LOGIN BOX ================= -->
+<div id="login-box">
+
+    <h2>Login System</h2>
+
+    <input type="text" id="username" placeholder="Username">
+    <input type="password" id="password" placeholder="Password">
+
+    <select id="role">
+        <option value="admin">Admin</option>
+        <option value="teacher">Teacher</option>
+    </select>
+
+    <button id="login-btn">Login</button>
+
+    <p id="error"></p>
+
+</div>
+
+<!-- ================= MAIN LAYOUT ================= -->
+<div class="main-layout" style="display:none;">
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+        <ul>
+            <li>Dashboard</li>
+            <li>Mark Attendance</li>
+            <li>Attendance Report</li>
+            <li>Students</li>
+            <li>Attendance History</li>
+            <li id="logout">Logout</li>
+        </ul>
+
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+        <h1>Attendance Management System</h1>
+
+        <!-- ================= ADMIN PANEL ================= -->
+        <div id="admin-panel">
+
+            <h2>Admin Dashboard</h2>
+
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Teachers</h3>
+                    <h1>2</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <h1 id="total-students">0</h1>
+                </div>
+
+            </div>
+
+            <!-- ADD TEACHER -->
+            <div class="admin-section">
+
+                <h3>Add Teacher</h3>
+
+                <input type="text" id="tname" placeholder="Teacher Username">
+                <input type="password" id="tpass" placeholder="Password">
+
+                <button id="add-teacher-btn">Add Teacher</button>
+
+            </div>
+
+            <!-- TEACHER LIST -->
+            <div class="teacher-list">
+
+                <h3>Teachers List</h3>
+                <ul id="teacher-list"></ul>
+
+            </div>
+
+        </div>
+
+        <!-- ================= TEACHER PANEL ================= -->
+        <div id="teacher-panel">
+
+            <h2>Teacher Dashboard</h2>
+
+            <!-- TOP FORM -->
+            <div class="top-form">
+
+                <input type="text" id="student-name" placeholder="Enter student name">
+                <input type="text" id="search-input" placeholder="Search student">
+
+                <button id="add-btn">Add Student</button>
+                <button id="save-btn">Save Attendance</button>
+
+            </div>
+
+            <!-- CARDS -->
+            <div class="cards">
+
+                <div class="card">
+                    <h3>Total Students</h3>
+                    <h1 id="total-students">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Present</h3>
+                    <h1 id="present-count">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Absent</h3>
+                    <h1 id="absent-count">0</h1>
+                </div>
+
+                <div class="card">
+                    <h3>Attendance %</h3>
+                    <h1 id="attendance-percent">0%</h1>
+                </div>
+
+            </div>
+
+            <!-- STUDENT TABLE -->
+            <div class="student-table">
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="student-body"></tbody>
+                </table>
+
+            </div>
+
+            <!-- REPORT -->
+            <div class="report-section">
+
+                <h2>Attendance Report</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Status</th>
+                            <th>Marks</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="report-body"></tbody>
+
+                </table>
+
+            </div>
+
+            <!-- HISTORY -->
+            <div class="history-section">
+
+                <h2>Attendance History</h2>
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Total</th>
+                            <th>Present</th>
+                            <th>Absent</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="history-body"></tbody>
+
+                </table>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
