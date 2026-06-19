@@ -241,11 +241,6 @@ addBtn.addEventListener("click", ()=>{
     }
 });
 
-localStorage.setItem(
-    "students",
-    JSON.stringify(students)
-);
-
 /* ================= SEARCH ================= */
 searchInput.addEventListener("input", ()=>{
 
@@ -321,8 +316,3 @@ document.getElementById("logout").addEventListener("click", ()=>{
 
     location.reload();
 });
-
-let students =
-JSON.parse(localStorage.getItem("students"))
-||
-["Rahul","Aman","Priya"];
